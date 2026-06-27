@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           styleClass="app-background"
+           fx:controller="at.ac.hcw.chat.client.controller.LoginController">
+
+    <VBox alignment="CENTER" spacing="16" styleClass="login-card">
+        <Label text="Chat Room" styleClass="title"/>
+        <Label text="Connect to a server and start chatting" styleClass="subtitle"/>
+
+        <TextField fx:id="hostField" promptText="Server IP address" text="localhost"/>
+        <TextField fx:id="portField" promptText="Port" text="888"/>
+        <TextField fx:id="usernameField" promptText="Your username"/>
+
+        <Button text="Connect" onAction="#connect" styleClass="primary-button"/>
+
+        <Label fx:id="errorLabel" styleClass="error-label"/>
+    </VBox>
+
+</StackPane>

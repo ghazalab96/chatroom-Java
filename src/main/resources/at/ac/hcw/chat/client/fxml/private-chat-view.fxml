@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.ac.hcw.chat.client.controller.PrivateChatController">
+
+    <top>
+        <VBox>
+            <HBox alignment="CENTER_LEFT" styleClass="private-top-bar">
+                <Label fx:id="titleLabel" styleClass="private-title"/>
+            </HBox>
+            <!-- shown only when partner goes offline -->
+            <Label fx:id="offlineBanner" styleClass="offline-banner" maxWidth="Infinity"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="messages-scroll">
+            <VBox fx:id="messagesBox" spacing="6" styleClass="messages-box"/>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" styleClass="input-bar">
+            <TextField fx:id="messageField"
+                       promptText="Write a private message..."
+                       HBox.hgrow="ALWAYS"
+                       onAction="#sendMessage"/>
+            <Button text="Send" onAction="#sendMessage" styleClass="primary-button"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,206 @@
+/*
+  Palette:
+    #106C6E  — Stormy Teal   (darkest, top bar / sidebar / input bar)
+    #338787  — Dark Cyan     (card, bubble-other)
+    #3B9DAE  — Pacific Blue  (bubble-mine)
+    #C1F6FA  — Icy Aqua      (lightest, main backgrounds & text on dark)
+*/
+
+/* ══ LOGIN PAGE ══════════════════════════════════════════════ */
+
+/* outer background of login screen: light */
+.login-background {
+    -fx-background-color: #C1F6FA;
+}
+
+/* dark card in the center */
+.login-card {
+    -fx-background-color: #106C6E;
+    -fx-background-radius: 20;
+    -fx-padding: 48 40;
+    -fx-max-width: 360;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 24, 0, 0, 8);
+}
+
+.title {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 34;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 13;
+    -fx-opacity: 0.75;
+}
+
+/* ── Inputs inside the dark card: light fill so they pop ── */
+.text-field {
+    -fx-background-color: #C1F6FA;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 10 14;
+    -fx-font-size: 14;
+    -fx-text-fill: #106C6E;
+    -fx-prompt-text-fill: #338787;
+}
+
+.text-field:focused {
+    -fx-border-color: #3B9DAE;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+/* light button on dark card */
+.primary-button {
+    -fx-background-color: #C1F6FA;
+    -fx-text-fill: #106C6E;
+    -fx-background-radius: 10;
+    -fx-padding: 10 28;
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3B9DAE;
+    -fx-text-fill: #C1F6FA;
+}
+
+.error-label {
+    -fx-text-fill: #fca5a5;
+    -fx-font-size: 13;
+}
+
+/* ══ CHAT PAGE ════════════════════════════════════════════════ */
+
+/* top bar & sidebar & input bar: darkest color */
+.top-bar {
+    -fx-background-color: #106C6E;
+    -fx-padding: 14 20;
+}
+
+.title-small {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+.username-badge {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-color: #3B9DAE;
+    -fx-background-radius: 6;
+    -fx-padding: 2 10;
+}
+
+/* messages area: light background */
+.messages-area {
+    -fx-background-color: #C1F6FA;
+}
+
+.messages-scroll {
+    -fx-background: #C1F6FA;
+    -fx-background-color: #C1F6FA;
+}
+
+.messages-scroll .viewport {
+    -fx-background-color: #C1F6FA;
+}
+
+.messages-box {
+    -fx-padding: 16;
+    -fx-background-color: #C1F6FA;
+}
+
+/* ── Bubbles ── */
+
+/* my message: mid-blue bg, light text */
+.bubble-mine {
+    -fx-background-color: #3B9DAE;
+    -fx-text-fill: #C1F6FA;
+    -fx-background-radius: 16 4 16 16;
+    -fx-padding: 8 14;
+    -fx-font-size: 14;
+}
+
+/* other's message: dark bg, light text */
+.bubble-other {
+    -fx-background-color: #338787;
+    -fx-text-fill: #C1F6FA;
+    -fx-background-radius: 4 16 16 16;
+    -fx-padding: 8 14;
+    -fx-font-size: 14;
+}
+
+.sender-label {
+    -fx-text-fill: #338787;
+    -fx-font-size: 11;
+}
+
+.system-message {
+    -fx-text-fill: #338787;
+    -fx-font-size: 12;
+    -fx-font-style: italic;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+    -fx-background-color: #106C6E;
+    -fx-padding: 14 10;
+    -fx-spacing: 6;
+}
+
+.sidebar-title {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-opacity: 0.8;
+    -fx-padding: 0 0 4 0;
+}
+
+.user-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.user-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 13;
+    -fx-padding: 5 8;
+}
+
+.user-list .list-cell:hover {
+    -fx-background-color: #338787;
+    -fx-background-radius: 6;
+}
+
+/* ── Input bar ── */
+.input-bar {
+    -fx-background-color: #106C6E;
+    -fx-padding: 12 16;
+}
+
+/* ══ PRIVATE CHAT WINDOW ══════════════════════════════════════ */
+
+.private-top-bar {
+    -fx-background-color: #106C6E;
+    -fx-padding: 12 16;
+}
+
+.private-title {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+.offline-banner {
+    -fx-background-color: #338787;
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 12;
+    -fx-font-style: italic;
+    -fx-padding: 6 16;
+    -fx-alignment: CENTER;
+}

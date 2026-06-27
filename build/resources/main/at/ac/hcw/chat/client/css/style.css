@@ -1,0 +1,175 @@
+/*
+  Palette:
+    #106C6E  — Stormy Teal   (darkest,  backgrounds)
+    #338787  — Dark Cyan     (panels, cards)
+    #3B9DAE  — Pacific Blue  (mid accent)
+    #C1F6FA  — Icy Aqua      (lightest,  text & highlights)
+
+  Contrast rule: always pair #C1F6FA text on dark backgrounds,
+  and #106C6E text on light (#C1F6FA) elements.
+*/
+
+/* ── Base ── */
+.app-background {
+    -fx-background-color: #106C6E;
+    -fx-font-family: "Arial";
+}
+
+/* ── Login card ── */
+.login-card {
+    -fx-background-color: #338787;
+    -fx-background-radius: 20;
+    -fx-padding: 48 40;
+    -fx-max-width: 360;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 24, 0, 0, 8);
+}
+
+.title {
+    -fx-text-fill: #C1F6FA;       /* light on dark card = high contrast */
+    -fx-font-size: 34;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 13;
+    -fx-opacity: 0.75;
+}
+
+/* ── Inputs: light fill so they pop against the dark card ── */
+.text-field {
+    -fx-background-color: #C1F6FA;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 10 14;
+    -fx-font-size: 14;
+    -fx-text-fill: #106C6E;       /* dark text on light field */
+    -fx-prompt-text-fill: #338787;
+}
+
+.text-field:focused {
+    -fx-border-color: #106C6E;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+/* ── Primary button: light bg + dark text = maximum contrast ── */
+.primary-button {
+    -fx-background-color: #C1F6FA;
+    -fx-text-fill: #106C6E;
+    -fx-background-radius: 10;
+    -fx-padding: 10 28;
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3B9DAE;
+    -fx-text-fill: #C1F6FA;
+}
+
+.error-label {
+    -fx-text-fill: #fca5a5;
+    -fx-font-size: 13;
+}
+
+/* ── Chat: top bar (darkest strip) ── */
+.top-bar {
+    -fx-background-color: #0a5052;   /* slightly darker than #106C6E */
+    -fx-padding: 14 20;
+}
+
+.title-small {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+.username-label {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-color: #3B9DAE;
+    -fx-background-radius: 6;
+    -fx-padding: 2 10;
+}
+
+/* ── Messages area ── */
+.scroll-pane, .scroll-pane .viewport {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.messages-box {
+    -fx-padding: 16;
+    -fx-background-color: transparent;
+}
+
+/* My bubble: light bg + dark text (very readable) */
+.bubble-mine {
+    -fx-background-color: #C1F6FA;
+    -fx-text-fill: #106C6E;
+    -fx-background-radius: 16 4 16 16;
+    -fx-padding: 8 14;
+    -fx-font-size: 14;
+}
+
+/* Other bubble: dark bg + light text */
+.bubble-other {
+    -fx-background-color: #338787;
+    -fx-text-fill: #C1F6FA;
+    -fx-background-radius: 4 16 16 16;
+    -fx-padding: 8 14;
+    -fx-font-size: 14;
+}
+
+.sender-label {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 11;
+    -fx-opacity: 0.65;
+}
+
+.system-message {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 12;
+    -fx-opacity: 0.55;
+    -fx-font-style: italic;
+}
+
+/* ── Sidebar (darkest — stands apart from main area) ── */
+.sidebar {
+    -fx-background-color: #0a5052;
+    -fx-padding: 14 10;
+    -fx-spacing: 8;
+}
+
+.sidebar-title {
+    -fx-text-fill: #C1F6FA;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-opacity: 0.8;
+}
+
+.user-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.user-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C1F6FA;
+    -fx-font-size: 13;
+    -fx-padding: 5 8;
+}
+
+.user-list .list-cell:hover {
+    -fx-background-color: #338787;
+    -fx-background-radius: 6;
+}
+
+/* ── Input bar (darkest) ── */
+.input-bar {
+    -fx-background-color: #0a5052;
+    -fx-padding: 12 16;
+}

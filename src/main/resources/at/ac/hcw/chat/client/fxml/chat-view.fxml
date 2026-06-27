@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.ac.hcw.chat.client.controller.ChatController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="top-bar">
+            <Label text="Chat Room" styleClass="title-small"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="usernameLabel" styleClass="username-badge"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox>
+            <ScrollPane fitToWidth="true" HBox.hgrow="ALWAYS" styleClass="messages-scroll">
+                <VBox fx:id="messagesBox" spacing="6" styleClass="messages-box"/>
+            </ScrollPane>
+
+            <VBox minWidth="160" maxWidth="200" styleClass="sidebar">
+                <Label text="Online — double-click to DM" styleClass="sidebar-title"/>
+                <ListView fx:id="userListView" VBox.vgrow="ALWAYS" styleClass="user-list"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" styleClass="input-bar">
+            <TextField fx:id="messageField"
+                       promptText="Message... or @username:text for private"
+                       HBox.hgrow="ALWAYS"
+                       onAction="#sendMessage"/>
+            <Button text="Send" onAction="#sendMessage" styleClass="primary-button"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
